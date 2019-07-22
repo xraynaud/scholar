@@ -1,10 +1,3 @@
-update_SCImago() <- function() {
-  readr::read_csv2("https://www.scimagojr.com/journalrank.php?out=xls") %>% 
-    dplyr::rename(Journal = Title)
-  save(journalrankings, file="journalrankings.rda", compress="xz")
-}
-  
-
 ## #' Impact Factor (2017)
 ## #'
 ## #' Downloaded from https://www.researchgate.net/post/New_Impact_factors_2017_for_Journals_are_released_now

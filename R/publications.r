@@ -322,6 +322,8 @@ get_journal_stats <- function(journals, max.distance, source_data, col = "Journa
 ##' @export
 ##' @author Dominique Makowski and Guangchuang Yu
 get_journalrank <- function(journals, max.distance = 0.05) {
+    journalrankings = readr::read_csv2("https://www.scimagojr.com/journalrank.php?out=xls")%>% dplyr::rename(Journal = Title)
+    names(journalrankings) = make.names(names(journalrankings))
     get_journal_stats(journals, max.distance, journalrankings)
 }
 
